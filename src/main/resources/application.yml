@@ -9,3 +9,14 @@ spring:
     restart:
       # 热部署生效
       enabled: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root1234
+    auto-commit: false
+    max-active: 200
+    max-wait: 2000
+    connection-test-query: select 1
+    max-lifetime: 2000000
+    connection-timeout: 30000
+    jdbc-url: jdbc:mysql://127.0.0.1:3306/restart
+    username: root
