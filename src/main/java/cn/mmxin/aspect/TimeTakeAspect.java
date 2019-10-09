@@ -53,7 +53,7 @@ public class TimeTakeAspect {
         //获取目标方法参数信息
         Object[] args = proceedingJoinPoint.getArgs();
         StringBuffer argsString = new StringBuffer();
-        Arrays.stream(args).forEach(arg->{  // 大大
+        Arrays.stream(args).forEach(arg->{
             try {
                 argsString.append(OBJECT_MAPPER.writeValueAsString(arg) + ",");
             } catch (JsonProcessingException e) {
