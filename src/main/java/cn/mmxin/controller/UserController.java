@@ -1,4 +1,4 @@
-package cn.mmxin;
+package cn.mmxin.controller;
 
 import cn.mmxin.pojo.User;
 import cn.mmxin.pojo.UserExample;
@@ -22,13 +22,13 @@ public class UserController {
 
     @RequestMapping(value = "login",method = RequestMethod.GET)
     @ResponseBody
-    public boolean login(String userName, String password){
-        User user  = new User();
+    public boolean login(User user){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
         UserExample userExample = new UserExample();
-        userExample.createCriteria().andUser_nameEqualTo(userName).andPasswordEqualTo(password);
+        userExample.createCriteria().andUser_nameEqualTo(user.getUser_name()).andPasswordEqualTo(user.getPassword());
         List<User> users = userMapper.selectByExample(userExample);
+        sqlSession.close();
         if (users.size() > 0){
             return true;
         }

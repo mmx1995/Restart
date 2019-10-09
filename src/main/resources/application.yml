@@ -18,5 +18,5 @@ spring:
     connection-test-query: select 1
     max-lifetime: 2000000
     connection-timeout: 30000
-    jdbc-url: jdbc:mysql://127.0.0.1:3306/restart
     username: root
+    url: jdbc:mysql://127.0.0.1:3306/restart?useSSL=false

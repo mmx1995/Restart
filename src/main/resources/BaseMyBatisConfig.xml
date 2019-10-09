@@ -4,5 +4,6 @@
     <mappers>
         <!-- 数据标准化 -->
         <mapper resource="cn/mmxin/sqlmap/UserMapper.xml" />
+        <mapper resource="cn/mmxin/sqlmap/ActionRecordMapper.xml" />
     </mappers>
 </configuration>

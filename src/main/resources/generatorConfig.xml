@@ -35,10 +35,19 @@
       targetProject="./src/main/java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
-   <table schema="restart" tableName="user" domainObjectName="User">
+
+<!--   <table schema="restart" tableName="user" domainObjectName="User">
       <property name="useActualColumnNames" value="true" />
       <property name="constructorBased" value="false" />
       <property name="ignoreQualifiersAtRuntime" value="true" />
+    </table>-->
+
+    <table schema="restart" tableName="action_record" domainObjectName="ActionRecord">
+      <property name="useActualColumnNames" value="true" />
+      <property name="constructorBased" value="false" />
+      <property name="ignoreQualifiersAtRuntime" value="true" />
+      <columnOverride column="request" javaType="java.lang.String" jdbcType="VARCHAR"/>
+      <columnOverride column="response" javaType="java.lang.String" jdbcType="VARCHAR"/>
     </table>
 
   </context>
